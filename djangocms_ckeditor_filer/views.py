@@ -11,7 +11,7 @@ def url_image(request, image_id):
     width = request.GET.get('width')
     height = request.GET.get('height')
 
-    url = image.url
+    url = image.canonical_url
     thumbnail_options = {}
     if thumb_options is not None:
         thumbnail_options = ThumbnailOption.objects.get(pk=thumb_options).as_dict
@@ -26,7 +26,7 @@ def url_image(request, image_id):
     if thumbnail_options != {}:
         thumbnailer = image.easy_thumbnails_thumbnailer
         image = thumbnailer.get_thumbnail(thumbnail_options)
-        url = image.url
+        url = image.canonical_url
 
     data = {
         'url': url,
