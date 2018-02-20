@@ -27,7 +27,7 @@ CKEDITOR.plugins.add( 'filerimage', {
 				}
 			});
 		}
-		CKEDITOR.scriptLoader.load( this.path + '../../../../filer/js/popup_handling.js' );
+		CKEDITOR.scriptLoader.load( this.path + '../../../../filer/js/addons/popup_handling.js' );
 		CKEDITOR.dialog.add( 'filerImageDialog', this.path + 'dialogs/filerImageDialog.js' );
 
 		var dialog = CKEDITOR.dialog.getCurrent();
